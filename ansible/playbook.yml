@@ -1,0 +1,7 @@
+---
+- name: Apply CIS Hardening Role on Localhost
+  hosts: localhost
+  become: true
+  connection: local
+  roles:
+    - linux_armour
