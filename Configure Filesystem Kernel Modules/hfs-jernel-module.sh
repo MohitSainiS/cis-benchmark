@@ -21,8 +21,7 @@ a_output+=(" - kernel module: \"$l_mod_name\" is not loadable")
 else
 a_output2+=(" - kernel module: \"$l_mod_name\" is loadable")
 fi
-if grep -Pq -- '\bblacklist\h+'"${l_mod_chk_name//-/_}"'\b' <<<
-"${a_showconfig[*]}"; then
+if grep -Pq -- '\bblacklist\h+'"${l_mod_chk_name//-/_}"'\b' <<<"${a_showconfig[*]}"; then
 a_output+=(" - kernel module: \"$l_mod_name\" is deny listed")
 else
 a_output2+=(" - kernel module: \"$l_mod_name\" is not deny listed")
